@@ -1,0 +1,30 @@
+.block {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 750px;
+    overflow: auto;
+    background: #d0d18a;
+    border-radius: 20px 0px 0px 20px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.text {
+    box-sizing: border-box;
+    display: inline-block;
+    background: #7ea4d6;
+    color: #531455;
+    outline: 10px #3b3b2f;
+    max-width: 250px;
+    min-width: none;
+    height: 200px;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 6px #000;
+    padding: 0px 20px 0px;
+    margin: 7px 5px;
+    overflow: visible;
+}
