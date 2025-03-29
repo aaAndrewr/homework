@@ -1,0 +1,62 @@
+body {
+    background: linear-gradient(90deg, #222049, #3d428b);
+    font-size: 25px;
+    font-family: 'Boldonse';
+    line-height: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: auto;
+    color: #fff;
+}
+
+.button-menu {
+    display: flex;
+    margin: 40px auto 0;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 10px #3d0000 solid;
+    background: linear-gradient(30deg, #5a2121 40%, #d46b6b);
+    width: 90vw;
+    height: 30vh;
+    border-radius: 10px;
+}
+
+.button {
+    font-size: 25px;
+    font-family: 'Boldonse';
+    line-height: 30px;
+    width: 350px;
+    height: 150px;
+    border-radius: 100px;
+    color: #fff;
+    border: 0px;
+    background-color: #39003b;
+}
+
+.button:first-child:hover {
+    background-color: #55297e;
+}
+
+.button:nth-child(2):hover {
+    background-color: #292f7e;
+}
+
+.button:last-child:hover {
+    background-color: #297e7e;
+}
+
+.kirieshka {
+    margin-top: 20px;
+    width: 400px;
+    height: 400px;
+}
