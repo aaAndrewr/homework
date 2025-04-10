@@ -1,33 +1,23 @@
 const modal = document.querySelector('.sector-modal')
 const buttonOpen = document.querySelector('.modal-open')
-// const buttonClose = document.querySelector('.modal-close')
 
 console.log(buttonOpen)
-// console.log(buttonClose)
 console.log(modal)
 
 buttonOpen.addEventListener('click', () => {
-    modal.style.visibility = 'visible'
-    modal.style.opacity = '1'
-    // modal.classList.remove('closed')
-    // buttonOpen.style.backgroundColor = '#575151'
+    modal.classList.remove('closed')
 })
 
-// 1 вариант записи
+modal.addEventListener('click', event => {
+    const target = event.target
 
-modal.addEventListener('click', () => {
-    const target = modal.target
-    if(target && target.classList.contain('modal') || modal.style.opacity === '1') {
-        modal.style.visibility = 'hidden'
-        modal.style.opacity = '0'
+    if(target && target.classList.contains('modal') || target.classList.contains('modal-close')) {
+        modal.classList.add('closed')
     }
 })
 
-// 2 вариант записи
-
-// buttonClose.addEventListener('click', () => {
-//     modal.style.visibility = 'hidden'
-//     modal.style.opacity = '0'
-//     // modal.classList.add('closed')
-//     // buttonOpen.style.backgroundColor = '#8f3557'
-// })
+document.addEventListener('keydown', (event) => {
+    if(event.code === 'Escape' && !modal.classList.contains('closed')) {
+        modal.classList.toggle('closed')
+    }
+})
