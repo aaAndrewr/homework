@@ -53,8 +53,8 @@ h1 {
     padding: 40px;
     position: fixed;
     top: 0;
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0;
+    visibility: hidden; */
     transition: all .3s;
 }
 
@@ -83,6 +83,7 @@ h1 {
     color: #c99aff;
 }
 
-/* .closed {
+.closed {
+    opacity: 0;
     visibility: hidden;
-} */
+}
