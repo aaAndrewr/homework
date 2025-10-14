@@ -1,3 +1,5 @@
+///////////////////////////// burger-menu////////////////////////////////////////////
+
 (function() {
     document.addEventListener('click', burgerInit)
 
@@ -41,9 +43,8 @@
         }
 
     }
-})()
-
-
+    
+    
     // мой вариант модального окна
     // const modalClose = document.querySelector('.modal__cancel')
     // const modalOpen = document.querySelector('.about__controls-button')
@@ -53,11 +54,82 @@
     // console.log(document.querySelector('.modal'))
     
     // modalOpen.addEventListener('click', () => {
-    //     document.body.classList.add('body--opened-modal')
-    //     document.querySelector('.modal').classList.add('modal--opened')
-    // })
-    
-    // modalClose.addEventListener('click', () => {
-    //     document.body.classList.remove('body--opened-modal')
-    //     document.querySelector('.modal').classList.remove('modal--opened')
-    // })
+        //     document.body.classList.add('body--opened-modal')
+        //     document.querySelector('.modal').classList.add('modal--opened')
+        // })
+        
+        // modalClose.addEventListener('click', () => {
+            //     document.body.classList.remove('body--opened-modal')
+            //     document.querySelector('.modal').classList.remove('modal--opened')
+            // })
+            
+            // /////////////////////////////////program/////////////////////////////////
+            
+            const tabControls = document.querySelector('.tab-controls')
+            
+            tabControls.addEventListener('click', toggleTab)
+            
+            function toggleTab(e) {
+                
+                const tabControl = e.target.closest('.tab-controls__link')
+                
+                if (!tabControl) return
+                e.preventDefault()
+                if (tabControl.classList.contains('tab-controls__link--active')) return
+                
+                
+                console.log('fff')
+                
+                const tabContentID = tabControl.getAttribute('href')
+                const tabContent = document.querySelector(tabContentID)
+                const ActiveControls = document.querySelector('.tab-controls__link--active')
+                const ActiveContent = document.querySelector('.tab-content--show')
+                
+                if (ActiveControls) {
+                    ActiveControls.classList.remove('tab-controls__link--active')
+                }
+                
+                if (ActiveContent) {
+                    ActiveContent.classList.remove('tab-content--show')
+                }
+                
+                tabControl.classList.add('tab-controls__link--active')
+                tabContent.classList.add('tab-content--show')
+                
+            }
+            
+            /////////////////////accordion///////////////////////
+            
+            const accordionLists = document.querySelectorAll('.accordion-list')
+            
+            accordionLists.forEach(el => {
+                
+                el.addEventListener('click', (e) => {
+
+                    const accordionList = e.currentTarget
+                    const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+                    const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+
+                    const accordionControl = e.target.closest('.accordion-list__control')
+
+                    if (!accordionControl) return
+                    const accordionItem = accordionControl.parentElement
+                    const accordionContent = accordionControl.nextElementSibling
+
+                    if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+                        accordionOpenedItem.classList.remove('accordion-list__item--opened')
+                        accordionOpenedContent.style.maxHeight = null;
+                    }
+                    accordionItem.classList.toggle('accordion-list__item--opened')
+
+                    if (accordionItem.classList.contains('accordion-list__item--opened')) {
+                        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                    } else {
+                        accordionContent.style.maxHeight = null;
+                    }
+
+                })
+                
+            })
+
+})()
