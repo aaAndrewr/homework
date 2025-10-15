@@ -134,7 +134,7 @@
 
 /////////////////////////////////////////////slider///////////////////////////////////////////////
 
-            const swiper = new Swiper('.swiper', {
+            new Swiper('.swiper', {
 
             spaceBetween: 32,
             slidesPerView: 1.4,
@@ -162,6 +162,40 @@
 
                 1101: {
                     slidesPerView: 4,
+                }
+            }
+});
+
+/////////////////////////testimonials///////////////////////////
+
+            new Swiper('.testimonials__slider', {
+
+            spaceBetween: 0,
+            slidesPerView: 1,
+            centeredSlides: true,
+
+            navigation: {
+                nextEl: '.testimonials__next',
+                prevEl: '.testimonials__prev',
+            },
+
+            scrollbar: {
+            el: '.testimonials__scrollbar',
+            draggable: true,
+            },
+
+            breakpoints: {
+                // 450: {
+                //     spaceBetween: 15,
+                //     slidesPerView: 2,
+                // },
+                
+                901: {
+                    slidesPerView: 1.5,
+                },
+
+                1201: {
+                    slidesPerView: 2.1,
                 }
             }
 });

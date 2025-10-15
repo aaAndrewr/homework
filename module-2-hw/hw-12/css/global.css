@@ -4,6 +4,7 @@
     --general-bg: #fff9f4;
     --accent-bg: #FFE0CB;
     --accent-color: #FFA55C;
+    --swiper-scrollbar-drag-bg-color: var(--accent-color);
 }
 
 .body {
