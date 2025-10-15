@@ -132,4 +132,38 @@
                 
             })
 
+/////////////////////////////////////////////slider///////////////////////////////////////////////
+
+            const swiper = new Swiper('.swiper', {
+
+            spaceBetween: 32,
+            slidesPerView: 1.4,
+
+            pagination: {
+                el: '.gallery__pagination',
+                type: 'fraction',
+            },
+
+            navigation: {
+                nextEl: '.gallery__next',
+                prevEl: '.gallery__prev',
+            },
+
+            breakpoints: {
+                450: {
+                    spaceBetween: 15,
+                    slidesPerView: 2,
+                },
+                
+                801: {
+                    spaceBetween: 32,
+                    slidesPerView: 3,
+                },
+
+                1101: {
+                    slidesPerView: 4,
+                }
+            }
+});
+
 })()
