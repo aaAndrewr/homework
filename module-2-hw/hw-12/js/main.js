@@ -200,4 +200,10 @@
             }
 });
 
+// //////////////////////inputmask///////////////////////////////
+
+    const telInputs = document.querySelectorAll('input[type="tel"]')
+    const im = new Inputmask('+375 (999) 999-99-99')
+    im.mask(telInputs)
+
 })()

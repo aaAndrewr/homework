@@ -623,23 +623,18 @@
     width: 100%;
 }
 
-/* /////////////////////////////////footer//////////////////////////////// */
+/* /////////////////////////////////contact//////////////////////////////// */
 
-/* .footer {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    bottom: 0;
-    justify-content: center;
-    background: url(../img/icons/footer_bg.png) 50% 100% / cover no-repeat;
+.main__contact {
+    padding: 140px 0;
+    background: url(../img/icons/contact_bg.png) 50% 0% / cover no-repeat;
 }
 
-.footer__inner {
+.contact__inner {
     display: flex;
+    align-items: end;
     position: relative;
-    min-width: 1274px;
-    height: 526px;
-    margin-top: 123px;
+    gap: 84px;
 }
 
 .berries_one {
@@ -654,41 +649,81 @@
     right: 0;
 }
 
-.footer__inner-img {
-    margin-top: 122px;
+.contact__inner-img {
+    display: flex;
+    align-items: start;
+}
+.contact__inner-img img {
+    width: 100%;
+    filter: drop-shadow(0px 4px 30px #c6b0a14d);
 }
 
-.footer__inner-form {
+.contact__body {
     max-width: 420px;
-    margin: 17px 0 0px 84px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.form-data div:nth-child(-n+2) {
+.contact__title {
+    margin-bottom: 20px;
+}
+
+.contact__text {
+    margin-bottom: 40px;
+}
+
+.contact__form {
+    max-width: 420px;
+}
+
+.contact__label {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contact__label input {
+    max-width: none;
+    background: transparent;
+}
+
+.contact__label span {
+    position: absolute;
+    font-size: 11px;
+    color: #ac907a;
+    padding: 12px 0 0 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
+
+.contact__input.field__input {
+    display: block;
+    max-width: none;
     padding: 19px 28px 19px 28px;
-    box-sizing: border-box;
-    border: 1px solid var(#ac907a);
+    background: transparent;
+    border: 1px solid #ac907a;
     border-radius: 100px;
+    font-size: 16px;
+    transition: all .4s;
+    margin-bottom: 20px;
+}
+.contact__input::placeholder {
+    color: #ac907a;
+    transition: all .4s;
+}
+.contact__input:hover {
+    content: '';
+    border-color: var(--accent-color);
+}
+.contact__input:hover::placeholder {
+    content: '';
+    color: var(--accent-color);
 }
 
-.form-data div:last-child { 
-    width: 285px;
-    height: 40px;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0%;
-    text-align: left;
-}
-.form-data div:last-child input {
-    width: 16px;
-    height: 16px;
-}
-.form-data div:last-child a {
-    text-decoration: underline;
-}
-
-.form-data button {
+.contact__button {
     width: 420px;
     height: 62px;
     border-radius: 60px;
@@ -700,27 +735,58 @@
     text-align: center;
     transition: all .7s;
 }
-.form-data button:hover {
+.contact__button:hover {
     content: '';
     background: #FF9138;
     transition: all .7s;
 }
 
-.footer__title {
-    color: var(--accent-text);
-    font-family: 'Gabriola';
-    font-size: 74px;
-    line-height: 0.82;
+.contact__check-label {
+    display: flex;
+    align-items: start;
+    max-width: 280px;
+    font-size: 13px;
+    gap: 5px;
     margin-bottom: 20px;
 }
 
-.form-title p {
-    color: var(--accent-text);
-    font-family: 'Montserrat';
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 40px;
-} */
+.contact__checkbox {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #AC907A;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all .4s;
+    cursor: pointer;
+    position: relative;
+}
+.contact__checkbox::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("../img/icons/check.svg") 50% 50% no-repeat;
+    opacity: 0;
+    transition: all .4s;
+}
+.contact__checkbox:hover {
+    border: 1.5px solid var(--accent-color);
+}
+.contact__checkbox:checked {
+    background: var(--accent-color);
+    border: 1.5px solid var(--accent-color);
+}
+.contact__checkbox:checked::before {
+    opacity: 1;
+}
+
+.contact__check-label a {
+    text-decoration: underline;
+    transition: all .2s;
+}
+.contact__check-label a:hover {
+    color: var(--accent-color);
+}
 
 /* ///////////media////////////////// */
 
@@ -781,6 +847,12 @@
         justify-self: center;
     }
 
+    /* --------------------------contact---------------------- */
+
+    .berries_two {
+        top: -20%;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -808,6 +880,13 @@
     }
     .accordion-list__control-title {
         font-size: 35px;
+    }
+
+    /* ----------------------contact------------------ */
+
+    .contact__inner {
+        align-items: center;
+        gap: 25px;
     }
 
 }
@@ -863,6 +942,16 @@
     .testimonials__scrollbar.swiper-scrollbar {
         width: 50%;
         margin: 0 auto;
+    }
+
+    /*-----------------------contact------------------ */
+    
+    .contact__inner {
+        justify-content: center;
+    }
+
+    .contact__inner-img {
+        display: none;
     }
 
 /* ----------------------footer----------------------------- */
@@ -973,6 +1062,11 @@
         align-self: end;
     }
 
+    /* --------------------contact------------------ */
+
+    .berries_one {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1091,6 +1185,15 @@
         text-align: center;
     }
 
+    /* ------------------------contact---------------- */
+
+    .main__contact {
+        padding-bottom: 50px;
+    }
+
+    .contact__title {
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {
