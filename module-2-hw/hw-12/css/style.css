@@ -262,11 +262,11 @@
 }
 
 .accordion-list__item {
+    transition: all .4s;
     border: 1px solid var(--accent-color);
     border-radius: 20px;
     background: var(--general-bg);
     margin-bottom: 30px;
-    padding: 40px 30px;
 }
 .accordion-list__item:last-child {
     margin-bottom: 0;
@@ -278,6 +278,8 @@
     justify-content: space-between;
     background: transparent;
     transition: all .5s;
+    padding: 40px 30px;
+    margin-bottom: 0;
 }
 
 .accordion-list__control-title {
@@ -318,12 +320,20 @@
 
 .accordion-list__content {
     max-height: 0;
-    transition: all .3s;
     overflow: hidden;
+    transition: all .4s;
+    padding: 0 30px;
 }
 
+.accordion-list__item--opened .accordion-list__control {
+    padding-bottom: 5px;
+}
+.accordion-list__item--opened .accordion-list__content {
+    overflow: visible;
+}
 .accordion-list__item--opened {
     overflow: visible;
+    padding-bottom: 30px;
 }
 
 .accordion-content {
@@ -675,17 +685,18 @@
 
 .contact__form {
     max-width: 420px;
+    width: 100%;
 }
 
 .contact__label {
     display: flex;
-    width: 100%;
     position: relative;
     margin-bottom: 10px;
 }
 
 .contact__label input {
     max-width: none;
+    width: 100%;
     background: transparent;
 }
 
@@ -724,7 +735,8 @@
 }
 
 .contact__button {
-    width: 420px;
+    max-width: 420px;
+    width: 100%;
     height: 62px;
     border-radius: 60px;
     background: var(--accent-color);
@@ -1033,9 +1045,15 @@
     .tab-controls__link {
         padding: 6px 20px;
     }
-
-    .accordion-list__item {
+    
+    .accordion-list__control {
         padding: 20px 20px;
+    }
+    .accordion-list__content {
+        padding: 0 20px;
+    }
+    .accordion-list__item--opened {
+        padding-bottom: 20px;
     }
 
     .accordion-content {
@@ -1125,8 +1143,14 @@
         font-size: 28px;
     }
 
-    .accordion-list__item {
+    .accordion-list__control {
         padding: 15px 15px;
+    }
+    .accordion-list__content {
+        padding: 0 15px;
+    }
+    .accordion-list__item--opened {
+        padding-bottom: 15px;
     }
 
     .accordion-list__control-icon {
@@ -1211,17 +1235,27 @@
     }
 
     /* ---------------program-------------- */
-
-        .accordion-list__item {
-        padding: 10px 10px;
-    }
-
+    
     .accordion-content__item {
         margin-bottom: 10px;
     }
-
+    
     .program__img{
         transform: scale(0.5);
+    }
+    
+    .accordion-list__item {
+        border-radius: 10px;
+    }
+
+    .accordion-list__control {
+        padding: 10px 10px;
+    }
+    .accordion-list__content {
+        padding: 0 10px;
+    }
+    .accordion-list__item--opened {
+        padding-bottom: 10px;
     }
 
     /* -----------gallery----------------- */
@@ -1238,6 +1272,13 @@
 
     .testimonials__slide.swiper-slide {
         padding: 30px 20px 30px;
+    }
+
+    /* --------------contact--------------------- */
+
+    .contact__text {
+        font-size: 4vw;
+        margin-bottom: 15px;
     }
 
 }
