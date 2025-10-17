@@ -321,7 +321,7 @@
 .accordion-list__content {
     max-height: 0;
     overflow: hidden;
-    transition: all .4s;
+    transition: all .2s;
     padding: 0 30px;
 }
 
@@ -1280,5 +1280,6 @@
         font-size: 4vw;
         margin-bottom: 15px;
     }
+
 
 }
