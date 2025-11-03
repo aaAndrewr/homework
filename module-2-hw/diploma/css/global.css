@@ -1,0 +1,38 @@
+:root {
+    --general-text: #000000;
+    --general-bg: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+.body {
+    background-color: var(--general-bg);
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    color: var(--general-text);
+    line-height: 16.8px;
+    position: relative;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 100%;
+}
+
+.title {
+    font-family: 'Readex Pro';
+    font-size: 58px;
+    line-height: 69.6px;
+}
